@@ -1,0 +1,31 @@
+menu:
+  size:
+    s:
+      lineHeight:
+        value: 1.25
+      itemIcon:
+        indentRight:
+          value: 14px
+      item:
+        spaceHor:
+        value: 0
+    m:
+      lineHeight:
+        value: 1.5
+      itemIcon:
+        indentRight:
+          value: 14px
+      item:
+        spaceHor:
+        value: 0
+  viewDefault:
+    typoColor:
+      base:
+        value: "rgba(255, 255, 255, 0.5)"
+      hovered:
+        value: "{color.typo.inverse.value}"
+    fillColor:
+      base:
+        value: "transparent"
+      hovered:
+        value: "transparent"

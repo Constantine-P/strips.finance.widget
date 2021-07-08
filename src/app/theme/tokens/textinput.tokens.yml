@@ -1,0 +1,19 @@
+textinput:
+  border:
+    width:
+      value: 1px
+  size:
+    s:
+      height:
+        value: 32px
+      spaceAll:
+        value: 0 15px
+      fontSize:
+        value: 14px
+    m:
+      height:
+        value: 36px
+      spaceAll:
+        value: 0 15px
+      fontSize:
+        value: 14px

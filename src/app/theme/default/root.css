@@ -1,0 +1,845 @@
+:root {
+    --space-3-xs: 2px;
+    --space-2-xs: 4px;
+    --space-xs: 8px;
+    --space-s: 12px;
+    --space-m: 16px;
+    --space-l: 20px;
+    --space-xl: 24px;
+    --space-2-xl: 32px;
+    --space-3-xl: 40px;
+    --space-4-xl: 48px;
+    --space-5-xl: 72px;
+    --space-6-xl: 96px;
+    --typography-font-family: 'helvetica neue', Helvetica, Arial, sans-serif;
+    --typography-font-weight-light: 300;
+    --typography-font-weight-regular: 400;
+    --typography-font-weight-medium: 500;
+    --typography-font-weight-bold: 700;
+    --control-font-family: 'helvetica neue', Helvetica, Arial, sans-serif;
+    --typography-controls-size-s-font-size: 14px;
+    --typography-controls-size-m-font-size: 18px;
+    --typography-controls-size-l-font-size: 22px;
+    --typography-letter-spacing: 0.0095em;
+    --color-base: #9e999d; /* базовый цвет содержимого, от которого выстраиваются цвета текста, иконок, ... */
+    --color-essential: #383035; /* базовый цвет поверхностей */
+    --color-project: #383035; /* проектный цвет, от которого выстраивают акцентные состояния */
+    --color-phantom: #000; /* тонирующий цвет, от которого выстраиваются бордеры, паранджа, ... */
+    --color-path: #04b; /* ссылочный цвет, от которого выстраиваются все их вариации */
+    --color-success: #0f7a0f; /* цвет успеха, от которого выстраивается как статусный фон так и типографика */
+    --color-alert: rgba(223, 50, 50, 1); /* цвет ошибки, от которого выстраивается как статусный фон так и типографика */
+    --color-warning: #f90; /* цвет предупреждения, от которого выстраивается как статусный фон так и типографика */
+    --color-normal: #dde3e5; /* нейтральный цвет, от которого выстраивается как статусный фон так и типографика */
+    --color-system: #778a9b; /* системный цвет, от которого выстраивается как статусный фон так и типографика */
+    --color-promo: #0057d3;
+    --color-hover: #c00;
+    --color-transparent: transparent;
+    --color-bg-brand: var(--color-project);
+    --color-bg-inverse: var(--color-base);
+    --color-bg-action: rgb(96, 82, 91);
+    --color-bg-selection: rgb(140, 120, 133);
+    --color-bg-hover: rgba(158, 153, 157, 0.15);
+    --color-bg-border: rgba(0, 0, 0, 0.05);
+    --color-bg-stripe: rgba(0, 0, 0, 0.04);
+    --color-bg-ghost: rgba(0, 0, 0, 0.08);
+    --color-bg-default: var(--color-essential);
+    --color-bg-tone: rgba(0, 0, 0, 0.9);
+    --color-bg-soft: rgba(56, 48, 53, 0.97);
+    --color-bg-success: var(--color-success);
+    --color-bg-alert: var(--color-alert);
+    --color-bg-warning: var(--color-warning);
+    --color-bg-normal: var(--color-normal);
+    --color-bg-system: var(--color-system);
+    --color-bg-link: rgba(21, 126, 239, 0.4);
+    --color-bg-promo: var(--color-promo);
+    --color-typo-brand: var(--color-project);
+    --color-typo-primary: #9e999d; /* цвет основного текста дефолтных контролов */
+    --color-typo-inverse: var(--color-essential);
+    --color-typo-promo: rgba(158, 153, 157, 0.8);
+    --color-typo-secondary: #9e999d; /* цвет второстепенного текста контрола */
+    --color-typo-ghost: rgba(158, 153, 157, 0.3); /* цвет дополнительного текста контрола */
+    --color-typo-disable: rgba(158, 153, 157, 0.3); /* цвет основного текста неактивного контрола */
+    --color-typo-success: var(--color-success);
+    --color-typo-warning: var(--color-warning);
+    --color-typo-alert: rgb(168, 26, 26);
+    --color-typo-secondary-dark: #9e999d;
+    --color-link: var(--color-base);
+    --color-control-bg-border-focus: #383035; /* цвет фона бордеров контрола при фокусе */
+    --color-control-bg-border-prism: var(--color-project); /* цвет фона бордера офсетных выделений контрола */
+    --color-control-typo-primary: var(--color-base);
+    --color-control-typo-secondary: rgba(158, 153, 157, 0.6);
+    --color-control-typo-ghost: rgba(158, 153, 157, 0.3);
+    --color-control-typo-passive: var(--color-base);
+    --color-control-typo-faint: rgb(255, 255, 255);
+    --color-control-typo-disable: rgb(128, 128, 128);
+    --color-control-typo-link: var(--color-project);
+    --color-control-typo-error: rgb(168, 26, 26);
+    --color-control-bg-default: var(--color-essential); /* цвет фона контрола */
+    --color-control-bg-default-hover: rgb(222, 216, 220); /* цвет фона контрола по ховеру */
+    --color-control-bg-default-press: rgb(222, 216, 220); /* цвет фона контрола по нажатию */
+    --color-control-bg-default-disable: rgb(243, 241, 242); /* цвет фона неактивного контрола */
+    --color-control-bg-border-default: rgb(179, 179, 179); /* цвет фона бордеров контрола */
+    --color-control-bg-border-default-hover: rgb(219, 219, 219); /* цвет фона бордеров контрола по ховеру */
+    --color-control-bg-border-default-press: rgb(179, 179, 179); /* цвет фона бордеров контрола по нажатию */
+    --color-control-bg-border-default-disable: rgb(232, 232, 232); /* цвет фона бордеров неактивного контрола */
+    --color-control-bg-border-default-error: var(--color-alert);
+    --color-control-bg-border-default-error-hover: rgb(168, 26, 36);
+    --color-control-bg-pseudo: rgb(255, 255, 255); /* цвет фона псевдо контрола */
+    --color-control-bg-pseudo-hover: rgb(247, 247, 247); /* цвет фона псевдо контрола по ховеру */
+    --color-control-bg-border-pseudo: rgb(204, 204, 204); /* цвет бордеров псевдо контрола */
+    --color-control-bg-action: var(--color-project); /* цвет фона активного контрола */
+    --color-control-bg-action-hover: rgb(52, 45, 50); /* цвет фона активного контрола по ховеру */
+    --color-control-bg-action-press: rgb(52, 45, 50); /* цвет фон активного контролы по нажатию */
+    --color-control-bg-passive: var(--color-essential); /* цвет фона пассивной части контрола */
+    --color-control-bg-progress: var(--color-project); /* цвет фон активного контрола в прогрессе */
+    --color-control-bg-progress-process: rgb(55, 47, 52); /* цвет фон активного контрола в прогрессе выполнения */
+    --color-control-bg-blank: var(--color-essential); /* цвет фона пустого контрола */
+    --color-control-bg-blank-hover: var(--color-essential); /* цвет фона пустого контрола по ховеру */
+    --color-control-bg-blank-disable: rgb(243, 241, 242); /* цвет фона пустого неактивного контрола */
+    --color-control-bg-border-blank: #383035; /* цвет фона бордеров пустого контрола */
+    --color-control-bg-border-blank-hover: #494156; /* цвет фона бордеров пустого контрола по ховеру */
+    --color-control-bg-border-blank-disable: rgb(243, 241, 242); /* цвет фона бордеров пустого неактивного контрола */
+    --color-control-bg-faint: var(--color-essential); /* цвет фона ослабленной части контрола */
+    --color-control-bg-faint-disable: rgb(203, 194, 200); /* цвет фона ослабленной части неактивного контрола */
+    --color-control-bg-check: var(--color-project); /* цвет фона чекнутого контрола */
+    --color-control-bg-check-hover: var(--color-project); /* цвет фона чекнутого контрола по ховеру */
+    --color-control-bg-check-press: rgb(82, 82, 82); /* цвет фона чекнутого контрола по нажатию */
+    --color-control-bg-check-disable: rgb(242, 242, 242); /* цвет фона чекнутого неактивного контрола */
+    --color-control-bg-border-check: rgb(91, 77, 86); /* цвет фона бордеров чекнутого контрола */
+    --color-control-bg-border-check-hover: rgb(91, 77, 86); /* цвет фона бордеров чекнутого контрола по ховеру */
+    --color-control-bg-border-check-press: rgb(91, 77, 86); /* цвет фона бордеров чекнутого контрола при фокусе по нажатию */
+    --color-control-bg-link-default: var(--color-path);
+    --color-control-bg-link-default-hover: rgba(0, 68, 187, 0.3);
+    --color-control-bg-border-link-default: rgba(0, 68, 187, 0.6);
+    --color-control-bg-border-link-default-hover: rgba(0, 68, 187, 0.6);
+    --color-control-typo-raised: #000;
+    --color-control-typo-raised-disable: #7f7f7f;
+    --color-control-bg-raised: #fff;
+    --color-control-bg-raised-hover: #f5f5f5;
+    --color-control-bg-raised-disable: #f5f5f5;
+    --color-control-bg-raised-check: #fff;
+    --color-control-bg-link-default-hover: var(--color-project);
+    --color-project-light: rgba(17, 136, 221, 0.5);
+    --color-essential-secondary: #282327;
+    --color-card-shadow: rgba(0, 0, 0, 0.15);
+    --color-match-info-card: rgba(246, 247, 251, 1);
+    --attach-font-family: var(--control-font-family);
+    --attach-typo-color: var(--color-control-typo-primary);
+    --attach-reset-width: 12px;
+    --attach-reset-height: 12px;
+    --attach-reset-indentLeft: 5px;
+    --attach-iconFile-indentRight: 5px;
+    --attach-size-s-fontSize: var(--typography-controls-size-s-font-size);
+    --attach-size-s-lineHeight: 32px;
+    --attach-size-s-holder-indentLeft: 6px;
+    --attach-size-m-fontSize: var(--typography-controls-size-m-font-size);
+    --attach-size-m-lineHeight: 36px;
+    --attach-size-m-holder-indentLeft: 8px;
+    --attach-size-l-fontSize: var(--typography-controls-size-l-font-size);
+    --attach-size-l-lineHeight: 42px;
+    --attach-size-l-holder-indentLeft: 10px;
+    --badge-font-family: var(--control-font-family);
+    --badge-size-small: 10px;
+    --badge-size-large: 16px;
+    --badge-font-size: 12px;
+    --badge-border-radius: 8px;
+    --badge-border-color: var(--color-bg-default);
+    --badge-border-width: 2px;
+    --badge-fill-color: var(--color-bg-alert);
+    --badge-typo-color: var(--color-typo-inverse);
+    --button-font-family: var(--control-font-family);
+    --button-border-width: 1px;
+    --button-borderRadius: 4px; /* Радиус внутреннего блока */
+    --button-size-s-font: 14px; /* Размер текста у s-button */
+    --button-size-s-lineHeight: 32px; /* Межстрочный интервал текста у s-button */
+    --button-size-s-height: 32px; /* Высота у s-button */
+    --button-size-s-icon-width: 32px; /* Ширина иконки у s-button */
+    --button-size-s-icon-indentLeft: 25px; /* Размер внешнего левого отступа текста от иконки у s-button */
+    --button-size-s-icon-indentRight: 25px; /* Размер внешнего правого отступа текста от иконки у s-button */
+    --button-size-s-text-indentAll: 0 13px; /* Размер внешнего отступа у s-button */
+    --button-size-m-font: 14px; /* Размер текста у m-button */
+    --button-size-m-lineHeight: 36px; /* Межстрочный интервал текста у m-button */
+    --button-size-m-height: 36px; /* Высота у m-button */
+    --button-size-m-icon-width: 36px; /* Ширина иконки у m-button */
+    --button-size-m-icon-indentLeft: 29px; /* Размер внешнего левого отступа текста от иконки у m-button */
+    --button-size-m-icon-indentRight: 29px; /* Размер внешнего правого отступа текста от иконки у m-button */
+    --button-size-m-text-indentAll: 0 15px; /* Размер внешнего отступа у m-button */
+    --button-size-l-font: 16px; /* Размер текста у l-button */
+    --button-size-l-lineHeight: 42px; /* Межстрочный интервал текста у l-button */
+    --button-size-l-height: 46px; /* Высота у l-button */
+    --button-size-l-icon-width: 42px; /* Ширина иконки у l-button */
+    --button-size-l-icon-indentLeft: 35px; /* Размер внешнего левого отступа текста от иконки у l-button */
+    --button-size-l-icon-indentRight: 35px; /* Размер внешнего правого отступа текста от иконки у l-button */
+    --button-size-l-text-indentAll: 0 18px; /* Размер внешнего отступа у l-button */
+    --button-view-action-border-color-focused: var(--color-control-bg-border-prism);
+    --button-view-action-fill-color-base: var(--color-control-bg-action);
+    --button-view-action-fill-color-disabled: var(--color-control-bg-default-disable);
+    --button-view-action-fill-color-hovered: var(--color-control-bg-action-hover);
+    --button-view-action-fill-color-progress-base: var(--color-control-bg-progress);
+    --button-view-action-fill-color-progress-process: var(--color-control-bg-progress-process);
+    --button-view-action-fill-color-checked-base: var(--color-control-bg-check);
+    --button-view-action-fill-color-checked-hovered: var(--color-control-bg-check-hover);
+    --button-view-action-typo-color-base: #9e999d;
+    --button-view-action-typo-color-disabled: var(--color-control-typo-disable);
+    --button-view-action-typo-color-hovered: #9e999d;
+    --button-view-action-typo-color-progress-base: var(--color-control-typo-passive);
+    --button-view-action-typo-color-checked-base: var(--color-control-typo-faint);
+    --button-view-action-typo-color-checked-hovered: var(--color-control-typo-faint);
+    --button-view-clear-border-color-focused: var(--color-control-bg-border-prism);
+    --button-view-clear-fill-color-disabled: var(--color-control-bg-default-disable);
+    --button-view-clear-fill-color-checked-base: var(--color-control-bg-check);
+    --button-view-clear-fill-color-checked-hovered: var(--color-control-bg-check-hover);
+    --button-view-clear-typo-color-base: var(--color-control-typo-primary);
+    --button-view-clear-typo-color-disabled: var(--color-control-typo-disable);
+    --button-view-clear-typo-color-checked-base: var(--color-control-typo-faint);
+    --button-view-default-border-color-focused: var(--color-control-bg-border-prism);
+    --button-view-default-fill-color-base: var(--color-control-bg-default);
+    --button-view-default-fill-color-disabled: var(--color-control-bg-default-disable);
+    --button-view-default-fill-color-hovered: var(--color-control-bg-default-hover);
+    --button-view-default-fill-color-checked-base: var(--color-control-bg-check);
+    --button-view-default-fill-color-checked-hovered: var(--color-control-bg-check-hover);
+    --button-view-default-typo-color-base: var(--color-control-typo-primary);
+    --button-view-default-typo-color-hovered: var(--color-control-typo-primary);
+    --button-view-default-typo-color-disabled: var(--color-control-typo-disable);
+    --button-view-default-typo-color-checked-base: var(--color-control-typo-faint);
+    --button-view-default-typo-color-checked-hovered: var(--color-control-typo-faint);
+    --button-view-link-border-color-base: var(--color-control-bg-border-link-default);
+    --button-view-link-border-color-focused: var(--color-control-bg-border-prism);
+    --button-view-link-fill-color-base: var(--color-control-bg-faint);
+    --button-view-link-fill-color-disabled: var(--color-control-bg-default-disable);
+    --button-view-link-fill-color-hovered: var(--color-control-bg-link-default-hover);
+    --button-view-link-fill-color-checked-base: var(--color-control-bg-check);
+    --button-view-link-fill-color-checked-hovered: var(--color-control-bg-check-hover);
+    --button-view-link-typo-color-base: var(--color-control-typo-link);
+    --button-view-link-typo-color-disabled: var(--color-control-typo-disable);
+    --button-view-link-typo-color-checked-base: var(--color-control-typo-faint);
+    --button-view-pseudo-border-color-base: var(--color-control-bg-border-pseudo);
+    --button-view-pseudo-border-color-focused: var(--color-control-bg-border-prism);
+    --button-view-pseudo-fill-color-disabled: var(--color-control-bg-default-disable);
+    --button-view-pseudo-fill-color-hovered: var(--color-control-bg-pseudo-hover);
+    --button-view-pseudo-fill-color-checked-base: var(--color-control-bg-check);
+    --button-view-pseudo-fill-color-checked-hovered: var(--color-control-bg-check-hover);
+    --button-view-pseudo-typo-color-base: var(--color-control-typo-primary);
+    --button-view-pseudo-typo-color-disabled: var(--color-control-typo-disable);
+    --button-view-pseudo-typo-color-checked-base: var(--color-control-typo-faint);
+    --button-view-raised-border-color-focused: var(--color-control-bg-border-prism);
+    --button-view-raised-fill-color-base: var(--color-control-bg-raised);
+    --button-view-raised-fill-color-disabled: var(--color-control-bg-raised-disable);
+    --button-view-raised-fill-color-hovered: var(--color-control-bg-raised-hover);
+    --button-view-raised-fill-color-checked-base: var(--color-control-bg-check);
+    --button-view-raised-fill-color-checked-hovered: var(--color-control-bg-check-hover);
+    --button-view-raised-typo-color-base: var(--color-control-typo-raised);
+    --button-view-raised-typo-color-disabled: var(--color-control-typo-raised-disable);
+    --button-view-raised-typo-color-checked-base: var(--color-control-typo-faint);
+    --button-group-gap-s: 1px; /* Растояние s между кнопками */
+    --button-group-gap-m: 4px; /* Растояние m между кнопками */
+    --button-group-gap-l: 6px; /* Растояние l между кнопками */
+    --button-group-gap-xl: 8px; /* Растояние xl между кнопками */
+    --button-group-pin-circle-border-radius: 100px; /* Радиус у кнопок с формой circle */
+    --button-group-pin-round-border-radius: var(--button-borderRadius); /* Радиус у кнопок с формой round */
+    --calendar-font-family: var(--typography-font-family);
+    --calendar-size-s-min-width: 252px;
+    --calendar-size-s-min-height: 180px;
+    --calendar-size-s-line-height: var(--text-control-size-s-line-height);
+    --calendar-size-s-font-size: var(--text-control-size-s-font-size);
+    --calendar-size-s-grid-aside-min-width: 28px;
+    --calendar-size-s-grid-aside-indent-right: 8px;
+    --calendar-size-s-cell-width: 36px;
+    --calendar-size-s-cell-space: 2px;
+    --calendar-size-m-min-width: 308px;
+    --calendar-size-m-min-height: 220px;
+    --calendar-size-m-line-height: var(--text-control-size-m-line-height);
+    --calendar-size-m-font-size: var(--text-control-size-m-font-size);
+    --calendar-size-m-grid-aside-min-width: 32px;
+    --calendar-size-m-grid-aside-indent-right: 12px;
+    --calendar-size-m-cell-width: 44px;
+    --calendar-size-m-cell-space: 4px;
+    --calendar-size-l-min-width: 378px;
+    --calendar-size-l-min-height: 270px;
+    --calendar-size-l-line-height: var(--text-control-size-l-line-height);
+    --calendar-size-l-font-size: var(--text-control-size-l-font-size);
+    --calendar-size-l-grid-aside-min-width: 36px;
+    --calendar-size-l-grid-aside-indent-right: 16px;
+    --calendar-size-l-cell-width: 54px;
+    --calendar-size-l-cell-space: 6px;
+    --calendar-view-default-grid-aside-border-radius: 4px;
+    --calendar-view-default-grid-aside-typo-color-base: rgba(0, 0, 0, 0.6);
+    --calendar-view-default-grid-aside-fill-color-base: rgba(0, 0, 0, 0.05);
+    --calendar-view-default-current-border-color: #ff3737;
+    --calendar-view-default-cell-border-width: 1px;
+    --calendar-view-default-cell-border-radius: 100px;
+    --calendar-view-default-cell-border-color-hovered: rgba(0, 0, 0, 0.1);
+    --calendar-view-default-cell-border-color-focused: #fdb100;
+    --calendar-view-default-cell-border-color-current: rgba(0, 0, 0, 0.05);
+    --calendar-view-default-cell-typo-color-base: rgba(0, 0, 0, 0.8);
+    --calendar-view-default-cell-typo-color-disabled: rgba(0, 0, 0, 0.45);
+    --calendar-view-default-cell-typo-color-selected-base: #fff;
+    --calendar-view-default-cell-typo-color-weekend: #ff3737;
+    --calendar-view-default-cell-fill-color-hovered: rgba(0, 0, 0, 0.05);
+    --calendar-view-default-cell-fill-color-pressed: rgba(0, 0, 0, 0.1);
+    --calendar-view-default-cell-fill-color-selected-base: #ff3737;
+    --calendar-view-default-cell-fill-color-selected-range: rgba(0, 0, 0, 0.05);
+    --calendar-view-default-cell-fill-color-selected-hovered: #ff0000;
+    --calendar-view-default-cell-fill-color-selected-disabled: #f2f2f2;
+    --checkbox-view-outline-border-color: rgba(0, 0, 0, 0.1);
+    --checkbox-view-outline-fill-color-base: transparent;
+    --checkbox-view-outline-fill-color-hovered: #d2d2d2;
+    --checkbox-view-outline-disabled-opacity: 0.4;
+    --checkbox-font-family: var(--control-font-family);
+    --checkbox-borderRadius: 4px;
+    --checkbox-size-s-fontSize: var(--typography-controls-size-s-font-size); /* Размер текста у s-checkbox */
+    --checkbox-size-s-indentLeft: 5px; /* Размер внешнего левого отступа у s-checkbox (от текста) */
+    --checkbox-size-s-width: 14px; /* Ширина у s-checkbox */
+    --checkbox-size-s-height: 14px; /* Высота у s-checkbox */
+    --checkbox-size-s-tick-width: 12px;
+    --checkbox-size-s-tick-height: 8px;
+    --checkbox-size-m-fontSize: var(--typography-controls-size-m-font-size); /* Размер текста у m-checkbox */
+    --checkbox-size-m-indentLeft: 5px; /* Размер внешнего левого отступа у m-checkbox (от текста) */
+    --checkbox-size-m-width: 17px; /* Ширина у m-checkbox */
+    --checkbox-size-m-height: 17px; /* Высота у m-checkbox */
+    --checkbox-size-m-tick-width: 13px;
+    --checkbox-size-m-tick-height: 10px;
+    --checkbox-disabled-opacity: 0.6;
+    --checkbox-view-default-outline-color: var(--color-control-bg-border-prism);
+    --checkbox-view-default-fill-color-base: var(--color-control-bg-default);
+    --checkbox-view-default-fill-color-hovered: var(--color-control-bg-default-hover);
+    --checkbox-view-default-fill-color-checked-base: var(--color-control-bg-check);
+    --checkbox-view-default-fill-color-checked-hovered: var(--color-control-bg-check-hover);
+    --checkbox-view-default-typo-color-base: var(--color-control-typo-primary);
+    --checkbox-view-default-typo-color-checked-base: var(--color-control-bg-faint);
+    --divider-indent-all: 16px;
+    --divider-fill-color: #fc0;
+    --header-font-family: 'YS Text', arial, sans-serif; /* Шрифт шапки */
+    --header-fill-color: #fff; /* Фон шапки */
+    --header-shadow: none; /* Тень шапки */
+    --header-space-all: 0 20px; /* Внутренние отступы шапки */
+    --header-z-index: auto; /* Расположение шапки по оси Z */
+    --header-content-height: 60px; /* Высота шапки */
+    --header-content-width: auto; /* Ширина шапки */
+    --header-content-indent-right: auto; /* Внешний отступ контента от блока с действиями. По умолчанию контент расположен рядом с логотипом. */
+    --header-content-max-width: 1400px; /* Максимальная ширина шапки */
+    --header-content-space-all: 0; /* Внутренние отступы контента шапки (область между Логотипом и блоком с действиями) */
+    --header-logo-height: 32px; /* Высота логотипов */
+    --header-logo-indent-right: 29px; /* Внешний отступ справа от основного логотипа */
+    --header-logo-circle-indent-top: -3px; /* Внешний отступ сверху круглого логотипа */
+    --header-logoaas-height: 32px; /* Высота Logoaas логотипа */
+    --header-logoaas-indent: -5px auto 5px auto; /* Внешние отступы изображения внутри Logoaas */
+    --header-icon-width: 20px; /* Ширина иконки */
+    --header-icon-height: 20px; /* Высота иконки */
+    --header-icon-indent-right: 8px; /* Внешний отступ справа от иконки */
+    --header-actions-gap: 14px; /* Расстояние между action блоками */
+    --header-actions-space-left: 24px; /* Внутренний отступ справа в блоке с действиями */
+    --header-nav-indent: 0; /* Внешние отступы в навигационных табах */
+    --header-nav-space-all: 0; /* Внутренние отступы в навигационных табах */
+    --header-nav-link-font-size: 16px; /* Размер шрифта в навигационных табах */
+    --header-nav-link-font-weight: 500; /* Насыщенность шрифта в навигационных табах */
+    --header-nav-link-line-height: 21px; /* Межстрочный интервал в навигационных табах */
+    --header-nav-link-space-all: 8px 2px; /* Внутренний отступ навигационного таба */
+    --header-nav-link-border: 2px solid transparent; /* Граница навигационного таба */
+    --header-nav-link-gap: 12px; /* Отступ между навигационными табами */
+    --header-nav-link-color-base: #939cb0; /* Основной цвет текста навигационного таба */
+    --header-nav-link-color-hover: #222426; /* Цвет текста навигационного таба при наведении мыши */
+    --header-nav-link-color-active: #d00; /* Цвет текста навигационного таба при нажатии */
+    --header-search-font-family: Arial, sans-serif; /* Шрифт Button_view_search-arrow */
+    --header-search-min-width: 220px; /* Минимальная ширина поисковой формы */
+    --header-search-max-width: 470px; /* Максимальная ширина поисковой формы */
+    --header-search-width: 470px; /* Ширина поисковой формы */
+    --header-search-indent-left: 29px; /* Внешний отступ слева поисковой формы */
+    --header-search-fill-color-base: #ffdb4d; /* Основной цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow */
+    --header-search-fill-color-hover: #ffd633; /* Цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow при наведении мыши */
+    --header-search-fill-color-active: #fc0; /* Цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow при нажатии */
+    --header-search-button-typo-color: #000; /* Цвет текста Button_view_search-arrow */
+    --header-search-button-font-size: 16px; /* Размер шрифта Button_view_search-arrow */
+    --header-search-button-line-height: 36px; /* Межстрочный интервал Button_view_search-arrow */
+    --header-search-button-width: 88px; /* Ширина Button_view_search-arrow */
+    --header-search-button-indent-right: 9px; /* Внешний отступ справа у элемента Text внутри Button_view_search-arrow */
+    --header-search-button-space-left: 5px; /* Внутренний отступ слева у элемента Text внутри Button_view_search-arrow */
+    --header-search-button-before-border-width: 22px 0 22px 11px; /* Ширина границы :before Button_view_search-arrow */
+    --header-search-button-before-top: -4px; /* Значение top :before Button_view_search-arrow */
+    --header-search-button-before-right: -9px; /* Значение right :before Button_view_search-arrow */
+    --header-search-textinput-height: 36px; /* Высота Texinput_view_search-arrow */
+    --header-search-textinput-typo-color: #000; /* Цвет текста Button_view_search-arrow */
+    --header-search-textinput-border-radius: 4px; /* Радиус скругления Texinput_view_search-arrow */
+    --header-search-textinput-fill-color: #fff; /* Цвет заливки Textinput_view_search-arrow Texinput-Box */
+    --header-search-textinput-control-font-size: 18px; /* Размер шрифта Textinput_view_search-arrow Textinput-Control */
+    --header-search-textinput-control-border-width: 0 30px 0 13px; /* Ширина границы Textinput_view_search-arrow Textinput-Control */
+    --header-search-textinput-box-border-width: 2px 0 2px 2px; /* Ширина границы Textinput_view_search-arrow Texinput-Box */
+    --link-view-default-outline-color: var(--color-control-bg-border-prism);
+    --link-view-default-typo-color-base: var(--color-link);
+    --link-view-default-typo-color-disabled: var(--color-typo-disable);
+    --link-view-default-typo-color-hovered: var(--color-link-hover);
+    --menu-font-family: var(--control-font-family);
+    --menu-group-borderWidth: 1px; /* Бордер у menu-group меню */
+    --menu-size-s-fontSize: var(--typography-controls-size-s-font-size); /* Размер текста у s-menu */
+    --menu-size-s-lineHeight: 1.25; /* Межстрочный интервал s-menu у s-menu */
+    --menu-size-s-spaceVert: 4px; /* Размер вертикального внутреннего отступа у s-menu */
+    --menu-size-s-group-spaceVert: 4px; /* Размер вертикального внутреннего отступа от группе у s-menu */
+    --menu-size-s-group-spaceHor: 0; /* Размер горизонтального внутреннего отступа от группе у s-menu */
+    --menu-size-s-group-indentBottom: 4px; /* Размер нижнего внешнего отступа от группы до пунктов у s-menu */
+    --menu-size-s-item: 0;
+    --menu-size-s-item-icon-indentRight: 14px;
+    --menu-size-s-titleSibling-indentLeft: 20px; /* Размер внешнего левого отступа у сущностей после тайтла у s-menu */
+    --menu-size-m-fontSize: var(--typography-controls-size-m-font-size); /* Размер текста у m-menu */
+    --menu-size-m-lineHeight: 1.5; /* Межстрочный интервал у m-menu */
+    --menu-size-m-spaceVert: 5px; /* Размер вертикального внутреннего отступа у m-menu */
+    --menu-size-m-group-spaceVert: 5px; /*  Размер вертикального внутреннего отступа в группе у m-menu */
+    --menu-size-m-group-spaceHor: 0; /* Размер горизонтального внутреннего отступа в группе у m-menu */
+    --menu-size-m-group-indentBottom: 5px; /* Размер нижнего внешнего отступа от группы до пунктов у m-menu */
+    --menu-size-m-item: 0;
+    --menu-size-m-item-icon-indentRight: 14px;
+    --menu-size-m-titleSibling-indentLeft: 20px; /* Размер внешнего левого отступа у сущностей после тайтла у m-menu */
+    --menu-view-default-border-color-base: var(--color-control-bg-border-default);
+    --menu-view-default-fill-color-base: transparent;
+    --menu-view-default-fill-color-hovered: transparent;
+    --menu-view-default-typo-color-base: rgba(255, 255, 255, 0.5);
+    --menu-view-default-typo-color-secondary: var(--color-control-typo-secondary);
+    --menu-view-default-typo-color-disabled: var(--color-control-typo-disable);
+    --menu-view-default-typo-color-hovered: var(--color-typo-inverse);
+    --message-box-fontSize: var(--typography-controls-size-s-font-size);
+    --message-box-font-family: var(--control-font-family);
+    --message-box-lineHeight: 16px;
+    --message-box-hint-borderRadius: 4px;
+    --message-box-close-lineHeight: 16px;
+    --message-box-close-fontSize: 11px;
+    --message-box-close-indentRight: 7px;
+    --message-box-close-width: 16px;
+    --message-box-close-height: 16px;
+    --message-box-text-indentLeft: 20px;
+    --message-box-text-indentRight: 20px;
+    --message-box-content-spaceAll: 20px;
+    --message-box-content-max-width: 180px;
+    --message-box-size-s-tail-size: 22px; /* Размер хвоста у message-box */
+    --message-box-size-s-tooltip-fontSize: 11px;
+    --message-box-size-s-fontSize: var(--typography-controls-size-s-font-size);
+    --message-box-size-s-border-radius: 7px;
+    --message-box-size-s-content-maxWidth: 260px;
+    --message-box-size-s-content-spaceAll: 5px 10px;
+    --message-box-size-s-content-functional-width: 180px;
+    --message-box-size-m-tail-size: 22px; /* Размер хвоста у message-box */
+    --message-box-size-m-tooltip-fontSize: 11px;
+    --message-box-size-m-fontSize: var(--typography-controls-size-s-font-size);
+    --message-box-size-m-border-radius: 7px;
+    --message-box-size-m-content-spaceAll: 10px 14px;
+    --message-box-size-m-content-minWidth: 200px;
+    --message-box-size-m-content-maxWidth: 280px;
+    --message-box-size-m-content-tooltip-maxWidth: 320px;
+    --message-box-size-m-content-functional-width: 280px;
+    --message-box-size-l-tail-size: 22px; /* Размер хвоста у message-box */
+    --message-box-size-l-functional-fontSize: 14px;
+    --message-box-size-l-functional-lineHeight: 18px;
+    --message-box-size-l-fontSize: var(--typography-controls-size-s-font-size);
+    --message-box-size-l-border-radius: 7px;
+    --message-box-size-l-content-spaceAll: 15px 20px;
+    --message-box-size-l-content-minWidth: 300px;
+    --message-box-size-l-content-maxWidth: 380px;
+    --message-box-size-l-content-width: 380px;
+    --message-box-size-l-content-functional-width: 380px;
+    --message-box-button-indentRight: 0;
+    --message-box-buttons-indentAll: 0;
+    --message-box-view-default-typo-color: var(--color-typo-inverse);
+    --message-box-view-default-fill-color: var(--color-bg-inverse);
+    --message-box-view-default-shadow: 0 6px 20px -4px rgba(0, 0, 0, .7);
+    --message-box-view-promo-typo-color: var(--color-typo-inverse);
+    --message-box-view-promo-fill-color: var(--color-bg-promo);
+    --message-box-view-promo-shadow: 0 6px 20px -4px rgba(0, 0, 0, .7);
+    --message-box-view-inverse-typo-color: var(--color-typo-primary);
+    --message-box-view-inverse-fill-color: var(--color-bg-default);
+    --message-box-view-inverse-shadow: 0 6px 20px -4px rgba(0, 0, 0, .7);
+    --modal-border-radius: 0;
+    --popup-borderRadius: 4px;
+    --popup-view-default-typo-color: var(--color-typo-primary);
+    --popup-view-default-fill-color: var(--color-bg-default);
+    --progressbar-height: 2px; /* Высота у progressbar */
+    --progress-border-radius: 0;
+    --progress-outer-fill-color: transparent;
+    --progress-inner-fill-color: var(--color-control-bg-progress);
+    --radio-button-font-family: var(--control-font-family);
+    --radioButton-indent: 3px;
+    --radioButton-borderRadius: 4px;
+    --radioButton-after-borderRadius: 2px;
+    --radioButton-size-s-fontSize: var(--typography-controls-size-s-font-size);
+    --radioButton-size-s-lineHeight: 28px;
+    --radioButton-size-s-space: 0 13px;
+    --radioButton-size-m-fontSize: var(--typography-controls-size-m-font-size);
+    --radioButton-size-m-lineHeight: 32px;
+    --radioButton-size-m-space: 0 15px;
+    --radioButton-size-l-fontSize: var(--typography-controls-size-l-font-size);
+    --radioButton-size-l-lineHeight: 38px;
+    --radioButton-size-l-space: 0 18px;
+    --radio-button-view-default-outline-color: var(--color-control-bg-border-prism);
+    --radio-button-view-default-fill-color-base: var(--color-control-bg-default);
+    --radio-button-view-default-fill-color-checked-base: var(--color-control-bg-passive);
+    --radio-button-view-default-typo-color-base: var(--color-control-typo-secondary);
+    --radio-button-view-default-typo-color-hovered: var(--color-control-typo-primary);
+    --radio-button-view-default-typo-color-checked-base: var(--color-control-typo-primary);
+    --radiobox-font-family: var(--control-font-family);
+    --radiobox-view-default-dot-fill-color: var(--color-control-bg-faint);
+    --radiobox-view-default-outline-color: var(--color-control-bg-border-prism);
+    --radiobox-view-default-fill-color-base: var(--color-control-bg-default);
+    --radiobox-view-default-fill-color-hovered: var(--color-control-bg-default-hover);
+    --radiobox-view-default-fill-color-checked-base: var(--color-control-bg-check);
+    --radiobox-view-default-fill-color-checked-hovered: var(--color-control-bg-check-hover);
+    --radiobox-view-default-typo-color-base: var(--color-control-typo-primary);
+    --radiobox-view-outline-border-color: rgba(0, 0, 0, 0.1);
+    --radiobox-view-outline-fill-color-base: transparent;
+    --radiobox-view-outline-fill-color-hovered: #d9d9d9;
+    --radiobox-view-outline-disabled-opacity: 0.4;
+    --radiobox-borderRadius: 50%; /* Скругление внешних краев у radioBox */
+    --radiobox-after-borderRadius: 50%; /* Скругление внутренних краев у radioBox */
+    --radiobox-size-s-fontSize: var(--typography-controls-size-s-font-size); /* Размер текста у s-radio */
+    --radiobox-size-s-lineHeight: 28px; /* Межстрочный интервал текста у s-radio */
+    --radiobox-size-s-size: 13px; /* Размер бокса у s-radio */
+    --radiobox-size-s-positionTop: 2px; /* Верхний отступ у s-radio */
+    --radiobox-size-s-indentRight: 5px; /* Размер внешнего правого отступа у s-radio (от текста)  */
+    --radiobox-size-s-after-size: 5px;
+    --radiobox-size-m-fontSize: var(--typography-controls-size-m-font-size); /* Размер текста у m-radio */
+    --radiobox-size-m-lineHeight: 32px; /* Межстрочный интервал текста у m-radio */
+    --radiobox-size-m-size: 17px; /* Размер бокса у m-radio */
+    --radiobox-size-m-positionTop: 3px; /* Верхний отступ у m-radio */
+    --radiobox-size-m-indentRight: 6px; /* Размер внешнего правого отступа у m-radio (от текста)  */
+    --radiobox-size-m-after-size: 7px;
+    --radiobox-disabled-opacity: 0.6;
+    --slider-font-family: var(--control-font-family); /* Шрифт слайдера */
+    --slider-view-default-typo-color-base: var(--color-control-typo-primary); /* Цвет типографики внутри слайдера */
+    --slider-view-default-height: 32px; /* Высота слайдера, без учета подписей */
+    --slider-view-default-track-border-radius: 2px; /* Внешний радиус скругления трека */
+    --slider-view-default-track-height: 2px; /* Высота трека */
+    --slider-view-default-track-fill-color-base: rgba(0, 0, 0, 0.15); /* Цвет заливки трека в обычном состоянии */
+    --slider-view-default-track-fill-color-hovered: rgba(0, 0, 0, 0.25); /* Цвет заливки трека в состоянии наведения */
+    --slider-view-default-range-fill-color-base: var(--color-control-bg-action); /* Цвет заливки диапазона в обычном состоянии */
+    --slider-view-default-range-fill-color-hovered: var(--color-control-bg-action-hover); /* Цвет заливки диапазона в состоянии наведения */
+    --slider-view-default-range-fill-color-disabled: rgba(0, 0, 0, 0.15); /* Цвет заливки диапазона в неактивном состоянии */
+    --slider-view-default-thumb-width: 16px; /* Ширина бегунка */
+    --slider-view-default-thumb-height: 16px; /* Высота бегунка */
+    --slider-view-default-thumb-border-radius: 50%; /* Внешний радиус скругления бегунка */
+    --slider-view-default-thumb-fill-color-base: var(--color-control-bg-raised); /* Цвет заливки бегунка в обычном состоянии */
+    --slider-view-default-thumb-fill-color-disabled: #000; /* Цвет заливки бегунка в неактивном состоянии */
+    --slider-view-default-tick-fill-color-base: #fff; /* Цвет заливки метки в обычном состоянии */
+    --slider-view-default-tick-width: 2px; /* Ширина метки */
+    --slider-view-default-tick-height: 2px; /* Высота метки */
+    --slider-view-default-tick-label-font-size: 13px; /* Размер шрифта подписи метки */
+    --slider-view-default-tick-label-line-height: 16px; /* Высота шрифта подписи метки */
+    --slider-view-default-track-height: 5px;
+    --spin-size-xxs: 16px;
+    --spin-size-xs: 24px;
+    --spin-size-s: 28px;
+    --spin-size-m: 32px;
+    --spin-size-l: 38px;
+    --spin-view-default-border-color: var(--color-control-bg-progress);
+    --tabs-menu-font-family: var(--control-font-family);
+    --tabsMenu-size-s-font: var(--typography-controls-size-s-font-size);
+    --tabsMenu-size-s-lineHeight: 28px;
+    --tabsMenu-size-m-font: var(--typography-controls-size-m-font-size);
+    --tabsMenu-size-m-lineHeight: 36px;
+    --tabs-menu-view-default-outline-color: var(--color-control-bg-border-prism);
+    --tabs-menu-view-default-active-line-fill-color-active: var(--color-typo-primary);
+    --tabs-menu-view-default-typo-color-base: var(--color-typo-primary);
+    --text-display-size-xl-font-size: 3.5rem;
+    --text-display-size-xl-line-height: 4rem;
+    --text-display-size-xl-letter-spacing: normal;
+    --text-display-size-xl-font-family: var(--typography-font-family);
+    --text-display-size-l-font-size: 3rem;
+    --text-display-size-l-line-height: 3.5rem;
+    --text-display-size-l-letter-spacing: 0.0065em;
+    --text-display-size-l-font-family: var(--typography-font-family);
+    --text-display-size-m-font-size: 2.5rem;
+    --text-display-size-m-line-height: 3rem;
+    --text-display-size-m-letter-spacing: 0.0065em;
+    --text-display-size-m-font-family: var(--typography-font-family);
+    --text-display-size-s-font-size: 2.125rem;
+    --text-display-size-s-line-height: 2.5rem;
+    --text-display-size-s-letter-spacing: 0.0065em;
+    --text-display-size-s-font-family: var(--typography-font-family);
+    --text-headline-size-xl-font-size: 28px;
+    --text-headline-size-xl-line-height: 2.5rem;
+    --text-headline-size-xl-letter-spacing: 0;
+    --text-headline-size-xl-font-family: var(--typography-font-family);
+    --text-headline-size-l-font-size: 24px;
+    --text-headline-size-l-line-height: 2.25rem;
+    --text-headline-size-l-letter-spacing: 0;
+    --text-headline-size-l-font-family: var(--typography-font-family);
+    --text-headline-size-m-font-size: 18px;
+    --text-headline-size-m-line-height: 1.875rem;
+    --text-headline-size-m-letter-spacing: 0;
+    --text-headline-size-m-font-family: var(--typography-font-family);
+    --text-headline-size-s-font-size: 16px;
+    --text-headline-size-s-line-height: 1.5rem;
+    --text-headline-size-s-letter-spacing: 0;
+    --text-headline-size-s-font-family: var(--typography-font-family);
+    --text-headline-size-xs-font-size: 14px;
+    --text-headline-size-xs-line-height: 1.5rem;
+    --text-headline-size-xs-letter-spacing: 0;
+    --text-headline-size-xs-font-family: var(--typography-font-family);
+    --text-subheader-size-xl-font-size: 1rem;
+    --text-subheader-size-xl-line-height: 1.25rem;
+    --text-subheader-size-xl-letter-spacing: 0.0065em;
+    --text-subheader-size-xl-font-family: var(--typography-font-family);
+    --text-subheader-size-l-font-size: 16px;
+    --text-subheader-size-l-line-height: 1.125rem;
+    --text-subheader-size-l-letter-spacing: 0.0065em;
+    --text-subheader-size-l-font-family: var(--typography-font-family);
+    --text-subheader-size-m-font-size: 11px;
+    --text-subheader-size-m-line-height: 1.125rem;
+    --text-subheader-size-m-letter-spacing: 0.0065em;
+    --text-subheader-size-m-font-family: var(--typography-font-family);
+    --text-subheader-size-s-font-size: 0.8125rem;
+    --text-subheader-size-s-line-height: 1.125rem;
+    --text-subheader-size-s-letter-spacing: 0.0065em;
+    --text-subheader-size-s-font-family: var(--typography-font-family);
+    --text-body-long-size-xl-font-size: 1rem;
+    --text-body-long-size-xl-line-height: 1.5rem;
+    --text-body-long-size-xl-letter-spacing: 0.0065em;
+    --text-body-long-size-xl-font-family: var(--typography-font-family);
+    --text-body-long-size-l-font-size: 0.9375rem;
+    --text-body-long-size-l-line-height: 1.25rem;
+    --text-body-long-size-l-letter-spacing: 0.0065em;
+    --text-body-long-size-l-font-family: var(--typography-font-family);
+    --text-body-long-size-m-font-size: 0.875rem;
+    --text-body-long-size-m-line-height: 1.25rem;
+    --text-body-long-size-m-letter-spacing: 0.0065em;
+    --text-body-long-size-m-font-family: var(--typography-font-family);
+    --text-body-long-size-s-font-size: 0.8125rem;
+    --text-body-long-size-s-line-height: 1.125rem;
+    --text-body-long-size-s-letter-spacing: 0.0065em;
+    --text-body-long-size-s-font-family: var(--typography-font-family);
+    --text-body-short-size-xl-font-size: 1rem;
+    --text-body-short-size-xl-line-height: 1.25rem;
+    --text-body-short-size-xl-letter-spacing: 0.0065em;
+    --text-body-short-size-xl-font-family: var(--typography-font-family);
+    --text-body-short-size-l-font-size: 0.9375rem;
+    --text-body-short-size-l-line-height: 1.125rem;
+    --text-body-short-size-l-letter-spacing: 0.0065em;
+    --text-body-short-size-l-font-family: var(--typography-font-family);
+    --text-body-short-size-m-font-size: 12px;
+    --text-body-short-size-m-line-height: 1.125rem;
+    --text-body-short-size-m-letter-spacing: 0.0065em;
+    --text-body-short-size-m-font-family: var(--typography-font-family);
+    --text-body-short-size-s-font-size: 0.8125rem;
+    --text-body-short-size-s-line-height: 1rem;
+    --text-body-short-size-s-letter-spacing: 0.0065em;
+    --text-body-short-size-s-font-family: var(--typography-font-family);
+    --text-caption-size-xl-font-size: 0.8125rem;
+    --text-caption-size-xl-line-height: 1rem;
+    --text-caption-size-xl-letter-spacing: 0;
+    --text-caption-size-xl-font-family: var(--typography-font-family);
+    --text-caption-size-l-font-size: 0.75rem;
+    --text-caption-size-l-line-height: 1rem;
+    --text-caption-size-l-letter-spacing: 0;
+    --text-caption-size-l-font-family: var(--typography-font-family);
+    --text-caption-size-m-font-size: 0.6875rem;
+    --text-caption-size-m-line-height: 1rem;
+    --text-caption-size-m-letter-spacing: 0;
+    --text-caption-size-m-font-family: var(--typography-font-family);
+    --text-caption-size-xs-letter-spacing: 0;
+    --text-caption-size-s-letter-spacing: 0;
+    --text-overline-size-l-font-size: 0.75rem;
+    --text-overline-size-l-line-height: 0.875rem;
+    --text-overline-size-l-letter-spacing: 0.0065em;
+    --text-overline-size-l-font-family: var(--typography-font-family);
+    --text-overline-size-m-font-size: 0.6875rem;
+    --text-overline-size-m-line-height: 0.875rem;
+    --text-overline-size-m-letter-spacing: 0.0065em;
+    --text-overline-size-m-font-family: var(--typography-font-family);
+    --text-overline-size-s-font-size: 0.625rem;
+    --text-overline-size-s-line-height: 0.75rem;
+    --text-overline-size-s-letter-spacing: 0.0065em;
+    --text-overline-size-s-font-family: var(--typography-font-family);
+    --text-control-size-xxl-font-size: 1.125rem;
+    --text-control-size-xxl-line-height: 1.5rem;
+    --text-control-size-xxl-letter-spacing: 0.0065em;
+    --text-control-size-xxl-font-family: var(--typography-font-family);
+    --text-control-size-xl-font-size: 1rem;
+    --text-control-size-xl-line-height: 1.25rem;
+    --text-control-size-xl-letter-spacing: 0.0065em;
+    --text-control-size-xl-font-family: var(--typography-font-family);
+    --text-control-size-l-font-size: 14px;
+    --text-control-size-l-line-height: 1.25rem;
+    --text-control-size-l-letter-spacing: 0.0065em;
+    --text-control-size-l-font-family: var(--typography-font-family);
+    --text-control-size-m-font-size: 12px;
+    --text-control-size-m-line-height: 1rem;
+    --text-control-size-m-letter-spacing: 0.0065em;
+    --text-control-size-m-font-family: var(--typography-font-family);
+    --text-control-size-s-font-size: 0.8125rem;
+    --text-control-size-s-line-height: 1rem;
+    --text-control-size-s-letter-spacing: 0.0065em;
+    --text-control-size-s-font-family: var(--typography-font-family);
+    --text-control-size-xs-font-size: 0.75rem;
+    --text-control-size-xs-line-height: 1rem;
+    --text-control-size-xs-letter-spacing: 0.0065em;
+    --text-control-size-xs-font-family: var(--typography-font-family);
+    --text-control-size-xxs-font-size: 0.6875rem;
+    --text-control-size-xxs-line-height: 1rem;
+    --text-control-size-xxs-letter-spacing: 0.0065em;
+    --text-control-size-xxs-font-family: var(--typography-font-family);
+    --textarea-font-family: var(--control-font-family);
+    --textarea-borderWidth: 2px;
+    --textarea-borderRadius: 4px; /* Ширина бордера у textarea */
+    --textarea-size-s-fontSize: var(--typography-controls-size-s-font-size); /* Размер текста у s-textarea */
+    --textarea-size-s-spaceAll: 6px; /* Внутренние отступы у s-textarea  */
+    --textarea-size-s-minWidth: 180px; /* Размер минимальной ширины у s-textarea */
+    --textarea-size-s-minHeight: 32px; /* Размер минимальной высоты у s-textarea */
+    --textarea-size-s-clear-width: 32px; /* Ширина очищающего контрола у s-textarea */
+    --textarea-size-s-clear-height: 32px; /* Высота очищающего контрола у s-textarea */
+    --textarea-hint-size-s-fontSize: 12px;
+    --textarea-size-m-fontSize: var(--typography-controls-size-m-font-size); /* Размер текста у m textarea */
+    --textarea-size-m-spaceAll: 8px; /* Внутренние отступы m-textarea */
+    --textarea-size-m-minWidth: 200px; /* Размер минимальной ширины у m-textarea */
+    --textarea-size-m-minHeight: 36px; /* Размер минимальной высоты у m-textarea */
+    --textarea-size-m-clear-width: 36px; /* Ширина очищающего контрола у m-textarea */
+    --textarea-size-m-clear-height: 36px; /* Высота очищающего контрола у m-textarea */
+    --textarea-hint-size-m-fontSize: 13px;
+    --textarea-view-default-fill-color-base: var(--color-control-bg-blank);
+    --textarea-view-default-fill-color-disabled: var(--color-control-bg-blank-disable);
+    --textarea-view-default-fill-color-hovered: var(--color-control-bg-blank-hover);
+    --textarea-view-default-typo-color-base: var(--color-control-typo-primary);
+    --textarea-view-default-typo-color-disabled: var(--color-control-typo-disable);
+    --textarea-view-default-placeholder-typo-color-base: var(--color-control-typo-ghost);
+    --textarea-view-default-placeholder-typo-color-disabled: var(--color-control-typo-disable);
+    --textarea-view-default-icon-fill-color-base: var(--color-control-typo-ghost);
+    --textarea-view-default-clear-fill-color-base: var(--color-control-typo-ghost);
+    --textarea-view-default-clear-fill-color-hovered: var(--color-control-typo-primary);
+    --textarea-view-default-hint-typo-color-state-error-base: var(--color-control-typo-error);
+    --textarea-view-default-border-color-base: var(--color-control-bg-border-blank);
+    --textarea-view-default-border-color-disabled: var(--color-control-bg-border-blank-disable);
+    --textarea-view-default-border-color-focused: var(--color-control-bg-border-focus);
+    --textarea-view-default-border-color-hovered: var(--color-control-bg-border-blank-hover);
+    --textarea-view-default-border-color-state-error-base: var(--color-control-bg-border-default-error);
+    --textarea-view-default-border-color-state-error-hovered: var(--color-control-bg-border-default-error-hover);
+    --textinput-font-family: var(--control-font-family);
+    --textinput-borderWidth: 1px;
+    --textinput-borderRadius: 4px;
+    --textinput-size-s-fontSize: 14px; /* Размер текста у s-textinput */
+    --textinput-size-s-height: 32px; /* Высота самого s-textinput */
+    --textinput-size-s-control-spaceAll: 0 15px; /* Размер внутреннего отступа самого s-textinput  */
+    --textinput-size-s-has-icon-spaceRight: 32px; /* Размер внутреннего правого отступа под размер иконки или крестика у s-textinput */
+    --textinput-size-s-has-icon-spaceLeft: 32px; /* Размер внутреннего левого отступа под размер иконки или крестика у s-textinput */
+    --textinput-size-s-icon-width: 32px;
+    --textinput-size-s-icon-height: 32px;
+    --textinput-hint-size-s-fontSize: 12px;
+    --textinput-size-m-fontSize: 14px; /* Размер текста у m-textinput */
+    --textinput-size-m-height: 36px; /* Высота самого m-textinput */
+    --textinput-size-m-control-spaceAll: 0 15px; /* `--textinput-size-m-control-spaceAll` *— Размер внутреннего отступа самого m-textinput* */
+    --textinput-size-m-has-icon-spaceRight: 36px; /* Размер внутреннего правого отступа под размер иконки или крестика у m-textinput */
+    --textinput-size-m-has-icon-spaceLeft: 36px; /* Размер внутреннего правого отступа правого отступа под размер иконки или крестика у m-textinput */
+    --textinput-size-m-icon-width: 36px;
+    --textinput-size-m-icon-height: 36px;
+    --textinput-hint-size-m-fontSize: 13px;
+    --textinput-view-material-typo-color-base: #000;
+    --textinput-view-material-typo-color-disabled: rgba(0, 0, 0, 0.4);
+    --textinput-view-material-border-color-base: rgba(0, 0, 0, 0.1);
+    --textinput-view-material-border-color-state-error: #FF3737;
+    --textinput-view-material-font-size: 1rem;
+    --textinput-view-material-space-all: 12px 0 10px;
+    --textinput-view-material-space-left: 16px;
+    --textinput-view-material-space-right: 16px;
+    --textinput-view-material-space-top: 16px;
+    --textinput-view-material-icon-fill-color-base: rgba(0, 0, 0, 0.8);
+    --textinput-view-material-icon-fill-color-disabled: rgba(0, 0, 0, 0.5);
+    --textinput-view-material-icon-width: 24px;
+    --textinput-view-material-icon-height: 24px;
+    --textinput-view-material-hint-font-size: 0.75rem;
+    --textinput-view-material-hint-typo-color-base: rgba(0, 0, 0, 0.4);
+    --textinput-view-material-hint-typo-color-state-error: #FF3737;
+    --textinput-view-material-caret-color-base: #067AFF;
+    --textinput-view-material-caret-color-state-error: #FF3737;
+    --textinput-view-material-placeholder-typo-color-base: var(--color-control-typo-ghost);
+    --textinput-view-material-label-color-base: rgba(0, 0, 0, 0.25);
+    --textinput-view-material-label-color-state-error: #FF3737;
+    --textinput-view-material-label-color-floated-base: rgba(0, 0, 0, 0.4);
+    --textinput-view-material-variant-filled-border-color-focused: #067AFF;
+    --textinput-view-material-variant-filled-fill-color: rgba(0, 0, 0, 0.05);
+    --textinput-view-material-variant-filled-label-color-floated: #067AFF;
+    --textinput-view-material-variant-outlined-border-color-base: rgba(0, 0, 0, 0.1);
+    --textinput-view-material-variant-outlined-border-color-focused: #067AFF;
+    --textinput-view-material-variant-outlined-label-color-floated: #067AFF;
+    --textinput-view-default-fill-color-base: var(--color-control-bg-blank);
+    --textinput-view-default-fill-color-disabled: var(--color-control-bg-blank-disable);
+    --textinput-view-default-fill-color-hovered: var(--color-control-bg-blank-hover);
+    --textinput-view-default-typo-color-base: var(--color-control-typo-primary);
+    --textinput-view-default-typo-color-disabled: var(--color-control-typo-disable);
+    --textinput-view-default-placeholder-typo-color-base: var(--color-control-typo-ghost);
+    --textinput-view-default-placeholder-typo-color-disabled: var(--color-control-typo-disable);
+    --textinput-view-default-icon-fill-color-base: var(--color-control-typo-ghost);
+    --textinput-view-default-clear-fill-color-base: var(--color-control-typo-ghost);
+    --textinput-view-default-clear-fill-color-hovered: var(--color-control-typo-primary);
+    --textinput-view-default-hint-typo-color-state-error-base: var(--color-control-typo-error);
+    --textinput-view-default-border-color-base: var(--color-control-bg-border-blank);
+    --textinput-view-default-border-color-disabled: var(--color-control-bg-border-blank-disable);
+    --textinput-view-default-border-color-focused: var(--color-control-bg-border-focus);
+    --textinput-view-default-border-color-hovered: var(--color-control-bg-border-blank-hover);
+    --textinput-view-default-border-color-state-error-base: var(--color-control-bg-border-default-error);
+    --textinput-view-default-border-color-state-error-hovered: var(--color-control-bg-border-default-error-hover);
+    --tooltip-font-family: var(--control-font-family);
+    --tooltip-borderRadius: 4px;
+    --tooltip-size-s-fontSize: var(--typography-controls-size-s-font-size); /* Размер текста у s-tooltip */
+    --tooltip-size-s-lineHeight: 12px; /* Межстрочный интервал текста у s-tooltip */
+    --tooltip-size-s-content-spaceAll: 8px; /* Размер внутренних отступов у контента s-tooltip */
+    --tooltip-size-s-tail-size: 12px; /* Размер хвоста s-tooltip */
+    --tooltip-size-m-fontSize: var(--typography-controls-size-m-font-size); /* Размер текста у m-tooltip */
+    --tooltip-size-m-lineHeight: 14px; /* Межстрочный интервал текста у m-tooltip */
+    --tooltip-size-m-content-spaceAll: 9px 10px; /* Размер внутренних отступов у контента m-tooltip */
+    --tooltip-size-m-tail-size: 24px; /* Размер хвоста m-tooltip */
+    --tooltip-size-l-fontSize: 16px; /* Размер текста у l-tooltip */
+    --tooltip-size-l-lineHeight: 16px; /* Межстрочный интервал текста у l-tooltip */
+    --tooltip-size-l-content-spaceAll: 18px; /* Размер внутренних отступов у контента l-tooltip */
+    --tooltip-size-l-tail-size: 36px; /* Размер хвоста l-tooltip */
+    --tooltip-view-default-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
+    --tooltip-view-default-fill-color-base: var(--color-control-bg-default);
+    --tooltip-view-default-fill-color-state-success: var(--color-bg-success);
+    --tooltip-view-default-fill-color-state-warning: var(--color-bg-warning);
+    --tooltip-view-default-fill-color-state-alert: var(--color-bg-alert);
+    --tooltip-view-default-typo-color-state-success: var(--color-control-typo-faint);
+    --tooltip-view-default-typo-color-state-warning: var(--color-control-typo-faint);
+    --tooltip-view-default-typo-color-state-alert: var(--color-control-typo-faint);
+    --tumbler-font-family: var(--control-font-family);
+    --tumbler-button-space: 2px;
+    --tumbler-button-opacity-disabled: 1;
+    --tumbler-size-s-fontSize: var(--typography-controls-size-s-font-size); /* Размер текста s-tumbler */
+    --tumbler-size-s-lineHeight: 16px; /* Межстрочный интервал текста у s-tumbler */
+    --tumbler-size-s-borderRadius: 8px;
+    --tumbler-size-s-width: 32px; /* Ширина s-tumbler */
+    --tumbler-size-s-height: 16px; /* Высота s-tumbler */
+    --tumbler-size-s-button-borderRadius: 6px;
+    --tumbler-size-s-button-width: 12px; /* Ширина button m-tumbler */
+    --tumbler-size-s-button-height: 12px; /* Высота button m-tumbler */
+    --tumbler-size-s-button-press-width: 14px;
+    --tumblerLabel-size-s-indentRight: 8px;
+    --tumblerLabel-size-s-indentLeft: 8px;
+    --tumbler-size-m-fontSize: var(--typography-controls-size-m-font-size); /* Размер текста m-tumbler */
+    --tumbler-size-m-lineHeight: 20px; /* Межстрочный интервал текста у m-tumbler */
+    --tumbler-size-m-borderRadius: 10px;
+    --tumbler-size-m-width: 40px; /* Ширина m-tumbler */
+    --tumbler-size-m-height: 20px; /* Высота m-tumbler */
+    --tumbler-size-m-button-borderRadius: 8px;
+    --tumbler-size-m-button-width: 16px; /* Ширина button m-tumbler */
+    --tumbler-size-m-button-height: 16px; /* Высота button m-tumbler */
+    --tumbler-size-m-button-press-width: 18px;
+    --tumblerLabel-size-m-indentRight: 12px;
+    --tumblerLabel-size-m-indentLeft: 12px;
+    --tumbler-size-l-fontSize: var(--typography-controls-size-l-font-size);
+    --tumbler-size-l-lineHeight: 24px;
+    --tumbler-size-l-borderRadius: 14px;
+    --tumbler-size-l-width: 56px;
+    --tumbler-size-l-height: 28px;
+    --tumbler-size-l-button-borderRadius: 12px;
+    --tumbler-size-l-button-width: 24px;
+    --tumbler-size-l-button-height: 24px;
+    --tumbler-size-l-button-press-width: 26px;
+    --tumblerLabel-size-l-indentRight: 16px;
+    --tumblerLabel-size-l-indentLeft: 16px;
+    --tumbler-view-default-outline-color: var(--color-control-bg-border-prism);
+    --tumbler-view-default-fill-color-base: var(--color-control-bg-default);
+    --tumbler-view-default-fill-color-disabled: var(--color-control-bg-default-disable);
+    --tumbler-view-default-fill-color-hovered: var(--color-control-bg-default-hover);
+    --tumbler-view-default-fill-color-checked-base: var(--color-control-bg-action);
+    --tumbler-view-default-fill-color-checked-disabled: var(--color-control-bg-default-disable);
+    --tumbler-view-default-fill-color-checked-hovered: var(--color-control-bg-action-hover);
+    --tumbler-view-default-button-fill-color-base: var(--color-control-bg-faint);
+    --tumbler-view-default-typo-color-base: var(--color-control-typo-primary);
+    --tumbler-view-default-typo-color-disabled: var(--color-control-typo-disable);
+    --user-pic-size-m-size: 42px;
+    --user-pic-size-m-size-plus: 52px;
+    --user-pic-size-s-size: 24px;
+    --user-pic-size-s-size-plus: 30px;
+}

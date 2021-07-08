@@ -1,0 +1,66 @@
+text:
+  headline:
+    size:
+      xs:
+        letterSpacing:
+          value: 0
+        fontSize:
+          value: 14px
+      s:
+        letterSpacing:
+          value: 0
+        fontSize:
+          value: 16px
+      m:
+        letterSpacing:
+          value: 0
+        fontSize:
+          value: 18px
+      l:
+        letterSpacing:
+          value: 0
+        fontSize:
+          value: 24px
+      xl:
+        letterSpacing:
+          value: 0
+        fontSize:
+          value: 28px
+  subheader:
+    size:
+      m:
+        fontSize:
+          value: 11px
+      l:
+        fontSize:
+          value: 16px
+  bodyShort:
+      size:
+        m:
+          fontSize:
+            value: 12px
+  control:
+    size:
+      m:
+        fontSize:
+          value: 12px
+      l:
+        fontSize:
+          value: 14px
+  caption:
+    size:
+      xs:
+        letterSpacing:
+          value: 0
+      s:
+        letterSpacing:
+          value: 0
+      m:
+        letterSpacing:
+          value: 0
+      l:
+        letterSpacing:
+          value: 0
+      xl:
+        letterSpacing:
+          value: 0

@@ -1,0 +1,40 @@
+.form-number-input {
+  $root: &;
+
+  width: 100%;
+
+  .Textinput-Control::placeholder {
+    text-transform: capitalize;
+  }
+
+  .Textinput-Box {
+    background-color: initial;
+  }
+
+  .Textinput_hovered {
+    background-color: initial!important;
+    .Textinput-Box {
+      background-color: initial!important;
+    }
+  }
+
+  &_size_s {
+    .Textinput-Box,
+    .Textinput-Control {
+    }
+  }
+
+  &_size_m {
+    .Textinput-Box,
+    .Textinput-Control {
+    }
+  }
+
+  &_size_l {
+    .Textinput-Box,
+    .Textinput-Control {
+      height: 46px !important;
+      font-size: 18px;
+    }
+  }
+}

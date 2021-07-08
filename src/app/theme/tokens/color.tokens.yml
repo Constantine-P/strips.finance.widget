@@ -1,0 +1,59 @@
+color:
+  alert:
+    value: "rgba(223, 50, 50, 1)"
+  success:
+    value: "#0f7a0f"
+  base:
+    value: "#9e999d"
+  projectLight:
+    value: "rgba(17, 136, 221, 0.5)"
+  project:
+    value: "#383035"
+  link:
+    value: "{color.base.value}"
+  essential:
+   value: "#383035"
+  essential-secondary:
+   value: "#282327"
+  card:
+    shadow:
+      value: "rgba(0, 0, 0, 0.15)"
+  match:
+    info:
+      card:
+        value: "rgba(246, 247, 251, 1)"
+  typo:
+    primary:
+      value: "#9e999d"
+    secondary:
+      value: "#9e999d"
+    secondaryDark:
+      value: "#9e999d"
+  control:
+    borderColor:
+      focus:
+        value: "#383035"
+    bgLink:
+      default:
+        hover:
+          value: "{color.project.value}"
+    type:
+      blank:
+        borderColor:
+          base:
+            value: "#383035"
+          hover:
+            value: "#494156"
+      check:
+        fillColor:
+          base:
+            value: "{color.project.value}"
+          hover:
+            value: "{color.project.value}"
+      default:
+        fillColor:
+          base:
+            value: "{color.essential}"
+    typo:
+      link:
+        value: "{color.project.value}"

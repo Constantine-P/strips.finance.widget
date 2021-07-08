@@ -1,0 +1,4 @@
+{
+  "extends": "@yandex/ui/Theme/themes/default.theme.json",
+  "sources": ["./src/app/theme/tokens/*.tokens.yml"]
+}

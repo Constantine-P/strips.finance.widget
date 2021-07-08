@@ -1,0 +1,117 @@
+.select {
+  $root: &;
+
+  width: 100%;
+
+  &:not(&_selected) {
+    .Button2-Text {
+      color: var(--color-typo-ghost);
+    }
+  }
+
+  &_with-icon {
+    .Button2-Text {
+      margin: 0 25px 0 35px !important;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translate(12px, -50%);
+    background: var(--color-essential);
+    padding: 0 3px;
+    font-size: 12px;
+    color: var(--color-typo-secondary-dark);
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .Select2-Button::before {
+    border-radius: 5px;
+    background-color: var(--color-essential);
+  }
+
+  .Button2_theme_normal:not([aria-disabled='true']):active::before,
+  .Button2_theme_normal.Button2_pressed::before {
+    background-color: var(--color-essential) !important;
+  }
+
+  &__select {
+    width: 100%;
+
+    #{$root}_invalid & {
+      .Button2.Select2-Button::before {
+        border-color: var(--color-alert);
+      }
+    }
+  }
+
+  &__before-icon {
+    position: absolute;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    left: 7px;
+    top: calc(50%);
+    transform: translateY(-50%);
+  }
+
+  &__icon {
+    position: absolute;
+    top: calc(50%);
+    transform: translateY(-50%);
+    right: 10px;
+    width: 12px;
+    fill: var(--color-base);
+  }
+
+  & .Menu-Item_hovered {
+    background-color: var(--color-essential-secondary)!important;
+  }
+
+  & .Menu-Item_checked {
+    background-image: initial !important;
+  }
+
+  & .Button2-Text {
+    margin: 0 25px 0 15px;
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--color-typo-primary);
+  }
+
+  & .Select2-Button {
+    &::before {
+      border-color: var(--textinput-view-default-border-color-base);
+    }
+
+    &[aria-expanded="true"] {
+      &::before {
+        border-color: var(--textinput-view-default-border-color-hover);
+      }
+    }
+  }
+
+  & .Select2-Popup {
+    max-width: 100%;
+    &:before {
+      background-color: var(--color-essential) !important;
+    }
+  }
+
+  & .Select2-Menu.Menu {
+    max-height: 200px;
+    background-color: var(--color-essential) !important;
+  }
+}

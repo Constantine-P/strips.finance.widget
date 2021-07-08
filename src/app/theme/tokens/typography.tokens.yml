@@ -1,0 +1,20 @@
+typography:
+  font:
+    family:
+      value: "'helvetica neue', Helvetica, Arial, sans-serif"
+      group: cosmetic
+  letterSpacing:
+    value: 0.0095em
+  controls:
+    fontFamily:
+      value: "'helvetica neue', Helvetica, Arial, sans-serif"
+    size:
+      s:
+        fontSize:
+          value: 14px
+      m:
+        fontSize:
+          value: 18px
+      l:
+        fontSize:
+          value: 22px

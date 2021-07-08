@@ -1,0 +1,54 @@
+.money-input {
+  &__addon {
+    height: 55px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &__balance {
+    margin-bottom: 4px;
+  }
+
+  &__currency {
+    display: flex;
+    align-items: center;
+  }
+
+  &__currency-icon {
+    margin-right: 7px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__currency-name {
+    line-height: 1;
+  }
+
+  &__max-button {
+    margin-right: 5px;
+    width: auto;
+    height: 23px;
+
+    .Button2-Text {
+      margin: 6px 10px;
+      font-size: 11px;
+      line-height: 1;
+    }
+  }
+
+  .Textinput-Control {
+    margin-bottom: 19px;
+    border-right-width: 125px !important;
+
+    &::-webkit-inner-spin-button {
+      opacity: 0 !important;
+    }
+  }
+
+  .Textinput-Box {
+    height: 55px;
+  }
+}

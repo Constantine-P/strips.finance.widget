@@ -1,0 +1,23 @@
+button:
+  size:
+    s:
+      height:
+        value: 32px
+      fontSize:
+        value: 14px
+    m:
+      height:
+        value: 36px
+      fontSize:
+        value: 14px
+    l:
+      height:
+        value: 46px
+      fontSize:
+        value: 16px
+  viewAction:
+      typoColor:
+        base:
+          value: "#9e999d"
+        hovered:
+          value: "#9e999d"

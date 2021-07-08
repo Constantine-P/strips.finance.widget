@@ -1,0 +1,45 @@
+.widget {
+  $root: &;
+
+  width: 450px;
+  border-radius: 5px;
+  padding: 20px 20px 30px;
+  background-color: var(--color-essential-secondary);
+  box-shadow: 0 2px 3px var(--color-card-shadow);
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    padding-bottom: 20px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__subtitle {
+    margin: 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  &__action-button {
+    text-transform: uppercase;
+  }
+
+  &__rates {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__leverage {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 30px;
+  }
+}

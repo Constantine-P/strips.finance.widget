@@ -1,0 +1,20 @@
+{
+  "entry": {
+    "default": "./src/app/theme/default/default.theme.json"
+  },
+  "output": {
+    "css": {
+      "preset": "css",
+      "buildPath": "./src/app/theme",
+      "files": [
+        {
+          "destination": "[entry]/[platform]/root.css",
+          "format": "css/variables",
+          "options": {
+            "useAliasVariables": true
+          }
+        }
+      ]
+    }
+  }
+}
