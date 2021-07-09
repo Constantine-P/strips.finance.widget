@@ -1,6 +1,6 @@
 import { ITextinputProps, Textinput } from '@yandex/ui/Textinput/desktop/bundle';
 import { BigNumber } from 'bignumber.js';
-import React, { useCallback, useMemo } from 'react';
+import React from 'react';
 import { FieldValues, useController, UseControllerProps } from 'react-hook-form';
 
 import { cn, classnames } from 'utils';
@@ -51,17 +51,30 @@ function FormTextInput<T extends FieldValues>(props: Props<T>) {
     ...fieldProps
   } = field;
   const { error, invalid } = fieldState;
-  const handleTextInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleTextInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = new BigNumber(e.target?.value || 0).decimalPlaces(
       precision ?? DEFAULT_PRECISION,
       BigNumber.ROUND_DOWN,
     );
     fieldOnChange(value);
-  }, []);
-  const handleTextInputBlur = useCallback(() => {
+  };
+  const handleTextInputBlur = () => {
     fieldOnBlur();
-  }, [fieldOnBlur]);
-  const value = useMemo(() => (fieldValue as BigNumber.Instance).toNumber(), [fieldValue]);
+  };
+  const handleInputKeyPress = (e: React.KeyboardEvent) => {
+    if (['e', 'E', '+', '-'].includes(e.key)) {
+      e.preventDefault();
+    }
+  };
+  const handleInputPaste = (e: React.ClipboardEvent) => {
+    const clipboardData = e?.clipboardData;
+    const pastedData = parseFloat(clipboardData.getData('text/plain'));
+
+    if (Number.isNaN(pastedData) || pastedData < 0) {
+      e.preventDefault();
+    }
+  };
+  const value = (fieldValue as BigNumber.Instance).toNumber();
 
   return (
     <div className={b({ size })}>
@@ -81,6 +94,8 @@ function FormTextInput<T extends FieldValues>(props: Props<T>) {
             inputMode="decimal"
             onChange={handleTextInputChange}
             onBlur={handleTextInputBlur}
+            onKeyPress={handleInputKeyPress}
+            onPaste={handleInputPaste}
             value={value === 0 ? '' : value}
             step="0.00001"
             {...fieldProps}

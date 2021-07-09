@@ -78,13 +78,22 @@ export function Widget({ onSubmit }: Props) {
   const [positionSize, collateral, leverage] = watch(['positionSize', 'collateral', 'leverage']);
   const [positionSizeLocked, setPositionSizeLocked] = useState<boolean>(false);
   const [collateralLocked, setCollateralLocked] = useState<boolean>(false);
+  const [activeField, setActiveField] = useState<string>();
 
   const handleFormSubmit = handleSubmit((data) => {
     onSubmit(data);
   });
 
+  const handleMoneyInputFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    setActiveField(e.target.name);
+  };
+
+  const handleMoneyInputMaxButtonFocus = (name: string) => {
+    setActiveField(name);
+  };
+
   useLayoutEffect(() => {
-    if (collateral.isEqualTo(0) || positionSizeLocked) return;
+    if (collateral.isEqualTo(0) || positionSizeLocked || activeField === 'positionSize') return;
     const positionSizeValue = new BigNumber(collateral)
       .multipliedBy(leverage)
       .decimalPlaces(PRECISION, BigNumber.ROUND_DOWN);
@@ -94,10 +103,11 @@ export function Widget({ onSubmit }: Props) {
     setTimeout(() => {
       setCollateralLocked(false);
     }, 0);
-  }, [collateral]);
+    trigger();
+  }, [collateral, leverage]);
 
   useLayoutEffect(() => {
-    if (positionSize.isEqualTo(0) || collateralLocked) return;
+    if (positionSize.isEqualTo(0) || collateralLocked || activeField === 'collateral') return;
     const collateralValue = new BigNumber(positionSize)
       .dividedBy(leverage)
       .decimalPlaces(PRECISION, BigNumber.ROUND_DOWN);
@@ -108,12 +118,7 @@ export function Widget({ onSubmit }: Props) {
       setPositionSizeLocked(false);
     }, 0);
     trigger();
-  }, [positionSize]);
-
-  useLayoutEffect(() => {
-    setValue('collateral', new BigNumber(0));
-    setValue('positionSize', new BigNumber(0));
-  }, [leverage]);
+  }, [positionSize, leverage]);
 
   return (
     <article className={b()}>
@@ -133,7 +138,12 @@ export function Widget({ onSubmit }: Props) {
               <RateCard title="Oracle (floating) rate" value={13.52} />
               <RateCard title="Market (fixed) rate" value={91.26} />
             </div>
-            <MoneyInput placeholder="position size" name="positionSize" precision={PRECISION} />
+            <MoneyInput
+              placeholder="position size"
+              name="positionSize"
+              precision={PRECISION}
+              onFocus={handleMoneyInputFocus}
+            />
             <section className={b('leverage')}>
               <FormLeverageSlider />
               <Text className={b('value')} typography="body-short-l" weight="medium" align="center">
@@ -146,6 +156,8 @@ export function Widget({ onSubmit }: Props) {
               balance={BALANCE}
               setValue={setValue}
               precision={PRECISION}
+              onFocus={handleMoneyInputFocus}
+              onMaxButtonClick={handleMoneyInputMaxButtonFocus}
             />
             <RatesCard
               titleLeft="Pay Fixed"

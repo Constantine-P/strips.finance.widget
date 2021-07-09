@@ -20,14 +20,19 @@ type Props = {
   placeholder: string;
   balance?: BigNumber.Instance;
   precision?: number;
+  onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
+  onMaxButtonClick?(name: string): void;
 };
 
 export function MoneyInput(props: Props) {
-  const { name, setValue, balance, placeholder, precision } = props;
+  const { name, setValue, balance, placeholder, precision, onFocus, onMaxButtonClick } = props;
 
   const handleMaxButtonClick = () => {
     if (!setValue || balance === undefined) return;
     setValue(name, balance);
+    if (onMaxButtonClick) {
+      onMaxButtonClick(name);
+    }
   };
 
   const BUSDRender = (
@@ -59,8 +64,8 @@ export function MoneyInput(props: Props) {
       name={name}
       maxLength={40}
       placeholder={placeholder}
-      min="0"
       precision={precision}
+      onFocus={onFocus}
     />
   );
 }
